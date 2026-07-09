@@ -83,7 +83,7 @@ export default function Navbar() {
                   backgroundClip: 'text',
                 }}
               >
-                ChocoCraft
+                Chocolafy
               </span>
               <span
                 className="text-[9px] tracking-[0.2em] uppercase block"
@@ -190,7 +190,7 @@ export default function Navbar() {
                     backgroundClip: 'text',
                   }}
                 >
-                  ChocoCraft
+                  Chocolafy
                 </span>
                 <button onClick={() => setMenuOpen(false)} style={{ color: '#C9A227' }}>
                   <X size={22} />

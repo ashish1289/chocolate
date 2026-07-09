@@ -23,10 +23,10 @@ const PRODUCT_LINKS = [
 ];
 
 const SOCIAL = [
-  { icon: FaInstagram, href: 'https://instagram.com/chococraft',  label: 'Instagram', color: '#E4405F' },
+  { icon: FaInstagram, href: 'https://instagram.com/chocolafy',  label: 'Instagram', color: '#E4405F' },
   { icon: FaWhatsapp,  href: 'https://wa.me/919876543210',        label: 'WhatsApp',  color: '#25D366' },
-  { icon: FaFacebook,  href: 'https://facebook.com/chococraft',   label: 'Facebook',  color: '#1877F2' },
-  { icon: FaYoutube,   href: 'https://youtube.com/@chococraft',   label: 'YouTube',   color: '#FF0000' },
+  { icon: FaFacebook,  href: 'https://facebook.com/chocolafy',   label: 'Facebook',  color: '#1877F2' },
+  { icon: FaYoutube,   href: 'https://youtube.com/@chocolafy',   label: 'YouTube',   color: '#FF0000' },
 ];
 
 export default function Footer() {
@@ -71,7 +71,7 @@ export default function Footer() {
                 className="text-2xl font-bold"
                 style={{ fontFamily: 'Playfair Display, serif', background: 'linear-gradient(135deg, #C9A227, #E8C547)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}
               >
-                ChocoCraft
+                Chocolafy
               </span>
             </Link>
             <p
@@ -166,7 +166,7 @@ export default function Footer() {
                 style={{ background: 'rgba(201,162,39,0.09)', border: '1px solid rgba(201,162,39,0.28)' }}
               >
                 <p className="text-sm font-semibold" style={{ color: '#C9A227' }}>🎉 You're subscribed!</p>
-                <p className="text-xs mt-1" style={{ color: 'rgba(201,169,128,0.5)' }}>Welcome to the ChocoCraft family</p>
+                <p className="text-xs mt-1" style={{ color: 'rgba(201,169,128,0.5)' }}>Welcome to the Chocolafy family</p>
               </motion.div>
             ) : (
               <form onSubmit={handleSubscribe} className="flex flex-col gap-3">
@@ -203,7 +203,7 @@ export default function Footer() {
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4"
           style={{ borderTop: '1px solid rgba(201,162,39,0.08)' }}>
           <p className="text-xs" style={{ color: 'rgba(201,169,128,0.35)', fontFamily: 'Poppins, sans-serif' }}>
-            © {new Date().getFullYear()} ChocoCraft. All rights reserved. Made with ❤️ in India.
+            © {new Date().getFullYear()} Chocolafy. All rights reserved. Made with ❤️ in India.
           </p>
           <div className="flex gap-6">
             {['Privacy Policy', 'Terms of Service', 'Refund Policy'].map(label => (

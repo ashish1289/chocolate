@@ -12,9 +12,9 @@ const CONTACT_INFO = [
   {
     icon: Mail,
     title: 'Email Us',
-    value: 'hello@chococraft.in',
+    value: 'hello@chocolafy.in',
     sub: 'Reply within 24 hours',
-    href: 'mailto:hello@chococraft.in',
+    href: 'mailto:hello@chocolafy.in',
   },
   {
     icon: MapPin,
@@ -56,7 +56,7 @@ export default function Contact() {
           className="text-center mb-16"
         >
           <p className="section-subtitle mb-4">Get In Touch</p>
-          <h2 className="section-title mb-6">Contact ChocoCraft</h2>
+          <h2 className="section-title mb-6">Contact Chocolafy</h2>
           <p
             className="text-base max-w-xl mx-auto"
             style={{ color: 'var(--text-muted)', fontFamily: 'Poppins, sans-serif' }}
@@ -177,7 +177,7 @@ export default function Contact() {
               style={{ minHeight: '400px' }}
             >
               <iframe
-                title="ChocoCraft Location"
+                title="Chocolafy Location"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.9038946697567!2d72.82717!3d18.964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce0e0a896a59%3A0xd98f1a01ae7c4c64!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
@@ -199,7 +199,7 @@ export default function Contact() {
                   className="text-xs font-bold"
                   style={{ color: '#C9A227', fontFamily: 'Poppins, sans-serif' }}
                 >
-                  📍 ChocoCraft — Mumbai, India
+                  📍 Chocolafy — Mumbai, India
                 </p>
               </div>
             </div>

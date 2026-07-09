@@ -75,7 +75,7 @@ export default function LoadingScreen({ onComplete }) {
                   backgroundClip: 'text',
                 }}
               >
-                ChocoCraft
+                Chocolafy
               </h1>
             </div>
           </div>

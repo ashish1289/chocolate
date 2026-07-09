@@ -339,7 +339,7 @@ export default function Home({ onOrderClick }) {
               >
                 <img
                   src="https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=800&q=85"
-                  alt="ChocoCraft artisan chocolate"
+                  alt="Chocolafy artisan chocolate"
                   className="w-full object-cover"
                   style={{ height: '440px' }}
                 />
@@ -384,7 +384,7 @@ export default function Home({ onOrderClick }) {
                 className="text-base leading-relaxed mb-6"
                 style={{ color: 'var(--text-muted)', fontFamily: 'Poppins, sans-serif' }}
               >
-                ChocoCraft was founded on a simple belief — that luxury chocolate should celebrate
+                Chocolafy was founded on a simple belief — that luxury chocolate should celebrate
                 nature's finest gifts. We started in a small artisan kitchen, experimenting with
                 premium dry fruits and Belgian couverture chocolate. Today, every piece we craft
                 carries that same dedication and love.

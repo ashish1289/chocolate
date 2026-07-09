@@ -9,7 +9,7 @@ const HERO_IMAGE = 'https://images.unsplash.com/photo-1548907040-4baa42d10919?w=
 
 const CONTACT_INFO = [
   { icon: Phone,  title: 'Call Us',        value: '+91-98765-43210', sub: 'Mon–Sat, 9AM–8PM',  href: 'tel:+919876543210' },
-  { icon: Mail,   title: 'Email Us',       value: 'hello@chococraft.in', sub: 'Reply within 24h', href: 'mailto:hello@chococraft.in' },
+  { icon: Mail,   title: 'Email Us',       value: 'hello@chocolafy.in', sub: 'Reply within 24h', href: 'mailto:hello@chocolafy.in' },
   { icon: MapPin, title: 'Visit Us',       value: 'Mumbai, Maharashtra', sub: 'India – 400001',  href: null },
   { icon: Clock,  title: 'Business Hours', value: 'Mon–Sat: 9AM–8PM',    sub: 'Sun: 10AM–6PM',  href: null },
 ];
@@ -197,13 +197,13 @@ export default function Contact() {
                 className="glass-card p-5 mt-5 flex items-center justify-between flex-wrap gap-4"
               >
                 <p className="text-sm font-semibold" style={{ color: 'var(--text-primary)', fontFamily: 'Poppins, sans-serif' }}>
-                  Follow ChocoCraft
+                  Follow Chocolafy
                 </p>
                 <div className="flex gap-3">
                   {[
-                    { icon: FaInstagram, href: 'https://instagram.com/chococraft', color: '#E4405F', label: 'Instagram' },
+                    { icon: FaInstagram, href: 'https://instagram.com/chocolafy', color: '#E4405F', label: 'Instagram' },
                     { icon: FaWhatsapp,  href: 'https://wa.me/919876543210',       color: '#25D366', label: 'WhatsApp'  },
-                    { icon: FaFacebook,  href: 'https://facebook.com/chococraft',  color: '#1877F2', label: 'Facebook'  },
+                    { icon: FaFacebook,  href: 'https://facebook.com/chocolafy',  color: '#1877F2', label: 'Facebook'  },
                   ].map(s => {
                     const Icon = s.icon;
                     return (
@@ -230,7 +230,7 @@ export default function Contact() {
                 style={{ minHeight: '380px', boxShadow: '0 20px 60px rgba(59,31,22,0.1)' }}
               >
                 <iframe
-                  title="ChocoCraft Mumbai Location"
+                  title="Chocolafy Mumbai Location"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60367.15588939988!2d72.77288!3d18.9647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce0e0a896a59%3A0xd98f1a01ae7c4c64!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
                   width="100%" height="100%"
                   style={{ border: 'none', minHeight: '380px', filter: 'saturate(0.65) contrast(1.1)' }}
@@ -240,7 +240,7 @@ export default function Contact() {
 
               {/* WhatsApp quick contact */}
               <motion.a
-                href="https://wa.me/919876543210?text=Hi+ChocoCraft!+I'd+like+to+place+an+order."
+                href="https://wa.me/919876543210?text=Hi+Chocolafy!+I'd+like+to+place+an+order."
                 target="_blank" rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
                 className="glass-card p-5 flex items-center gap-4 group"

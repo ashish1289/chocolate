@@ -53,7 +53,7 @@ export default function About() {
             <div className="relative rounded-3xl overflow-hidden" style={{ boxShadow: '0 30px 80px rgba(59,31,22,0.25)' }}>
               <img
                 src={ABOUT_IMAGE}
-                alt="ChocoCraft artisan chocolate making"
+                alt="Chocolafy artisan chocolate making"
                 className="w-full object-cover"
                 style={{ height: '500px' }}
               />
@@ -133,7 +133,7 @@ export default function About() {
 
             <div className="space-y-4" style={{ color: 'var(--text-muted)', fontFamily: 'Poppins, sans-serif' }}>
               <p className="text-base leading-relaxed">
-                ChocoCraft was founded on a simple belief — that luxury chocolate should celebrate
+                Chocolafy was founded on a simple belief — that luxury chocolate should celebrate
                 nature's finest gifts. We started in a small artisan kitchen, experimenting with
                 premium dry fruits and Belgian couverture chocolate.
               </p>

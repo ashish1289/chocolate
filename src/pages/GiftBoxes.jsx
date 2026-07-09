@@ -202,7 +202,7 @@ export default function GiftBoxes({ onOrderClick }) {
             <p className="section-subtitle mb-4">Our Packaging</p>
             <h2 className="section-title mb-6">Luxury Inside &amp; Out</h2>
             <p className="text-base max-w-xl mx-auto mb-10" style={{ color: 'var(--text-muted)', fontFamily: 'Poppins, sans-serif' }}>
-              Every ChocoCraft gift box is as beautiful on the outside as the chocolates inside —
+              Every Chocolafy gift box is as beautiful on the outside as the chocolates inside —
               silk-lined interiors, magnetic closures, and gold-embossed finishes.
             </p>
           </motion.div>

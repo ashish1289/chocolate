@@ -39,11 +39,11 @@ export default function WhyChooseUs() {
             Our Promise
           </p>
           <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ fontFamily: 'Playfair Display, serif', color: 'var(--text-primary)' }}>
-            Why Choose ChocoCraft?
+            Why Choose Chocolafy?
           </h2>
           <p className="text-base max-w-2xl mx-auto leading-relaxed" style={{ color: 'var(--text-muted)', fontFamily: 'Poppins, sans-serif' }}>
             We believe luxury chocolate should be as good for you as it tastes.
-            That's why every ChocoCraft creation is built on uncompromising principles.
+            That's why every Chocolafy creation is built on uncompromising principles.
           </p>
           <div className="flex items-center justify-center gap-3 mt-8">
             <div className="h-[1px] w-12 sm:w-24 bg-gradient-to-r from-transparent to-[#C9A227] opacity-60" />

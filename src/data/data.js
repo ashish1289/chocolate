@@ -1,5 +1,5 @@
 // ============================================
-// CHOCOCRAFT — PRODUCT DATA
+// CHOCOLAFY — PRODUCT DATA
 // ============================================
 
 export const PRODUCTS = [
@@ -132,7 +132,7 @@ export const TESTIMONIALS = [
     name: 'Priya Sharma',
     role: 'Food Blogger',
     rating: 5,
-    text: 'ChocoCraft is simply extraordinary. The Khajoor Chocolate is the most divine thing I\'ve ever tasted. It\'s become my go-to gift for every special occasion!',
+    text: 'Chocolafy is simply extraordinary. The Khajoor Chocolate is the most divine thing I\'ve ever tasted. It\'s become my go-to gift for every special occasion!',
     avatar: 'https://ui-avatars.com/api/?name=Priya+Sharma&background=C9A227&color=fff&size=80&bold=true',
   },
   {
@@ -148,7 +148,7 @@ export const TESTIMONIALS = [
     name: 'Ananya Patel',
     role: 'Wedding Planner',
     rating: 5,
-    text: 'Used ChocoCraft for a luxury wedding. The presentation was absolutely stunning. Guests were amazed by the quality. ChocoCraft is in a league of its own!',
+    text: 'Used Chocolafy for a luxury wedding. The presentation was absolutely stunning. Guests were amazed by the quality. Chocolafy is in a league of its own!',
     avatar: 'https://ui-avatars.com/api/?name=Ananya+Patel&background=5A3825&color=E8C547&size=80&bold=true',
   },
   {
@@ -337,7 +337,7 @@ export const GALLERY_IMAGES = [
 
 export const FAQ_DATA = [
   {
-    question: 'Are ChocoCraft chocolates made with natural ingredients?',
+    question: 'Are Chocolafy chocolates made with natural ingredients?',
     answer: 'Absolutely! Every single ingredient we use is 100% natural. We never use artificial flavors, colors, or preservatives. Our dry fruits are sourced directly from premium farms and our chocolate couverture is single-origin.',
   },
   {
@@ -373,8 +373,8 @@ export const FAQ_DATA = [
     answer: 'Yes! We launch special collections for Diwali, Eid, Christmas, Holi, and major festivals. Sign up for our newsletter to get early access and exclusive festival discounts up to 25% off.',
   },
   {
-    question: 'What makes ChocoCraft different from other chocolate brands?',
-    answer: 'ChocoCraft is born from a passion for combining authentic Indian dry fruits with world-class Belgian chocolate techniques. Every piece is handcrafted in small batches, ensuring consistent quality. We also offer a 100% satisfaction guarantee — if you\'re not delighted, we\'ll make it right.',
+    question: 'What makes Chocolafy different from other chocolate brands?',
+    answer: 'Chocolafy is born from a passion for combining authentic Indian dry fruits with world-class Belgian chocolate techniques. Every piece is handcrafted in small batches, ensuring consistent quality. We also offer a 100% satisfaction guarantee — if you\'re not delighted, we\'ll make it right.',
   },
 ];
 

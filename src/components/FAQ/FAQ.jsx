@@ -87,7 +87,7 @@ export default function FAQ() {
             className="text-base max-w-xl mx-auto"
             style={{ color: 'var(--text-muted)', fontFamily: 'Poppins, sans-serif' }}
           >
-            Everything you need to know about ChocoCraft. Can't find your answer?
+            Everything you need to know about Chocolafy. Can't find your answer?
             Feel free to contact us directly.
           </p>
           <div className="flex items-center justify-center gap-3 mt-6">

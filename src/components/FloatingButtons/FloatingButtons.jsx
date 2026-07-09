@@ -5,7 +5,7 @@ import { Phone } from 'lucide-react';
 // ✏️  CHANGE THESE PLACEHOLDERS:
 const WHATSAPP_NUMBER = '919876543210'; // e.g. 919876543210
 const PHONE_NUMBER = '+91-98765-43210';
-const INSTAGRAM_URL = 'https://instagram.com/chococraft';
+const INSTAGRAM_URL = 'https://instagram.com/chocolafy';
 
 export default function FloatingButtons() {
   return (
@@ -51,7 +51,7 @@ export default function FloatingButtons() {
 
       {/* WhatsApp */}
       <motion.a
-        href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20ChocoCraft!%20I%20would%20like%20to%20place%20an%20order.`}
+        href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20Chocolafy!%20I%20would%20like%20to%20place%20an%20order.`}
         target="_blank"
         rel="noopener noreferrer"
         initial={{ opacity: 0, x: 60 }}

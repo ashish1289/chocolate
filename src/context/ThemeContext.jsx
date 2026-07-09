@@ -4,7 +4,7 @@ const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
   const [isDark, setIsDark] = useState(() => {
-    const saved = localStorage.getItem('chococraft-theme');
+    const saved = localStorage.getItem('chocolafy-theme');
     return saved ? saved === 'dark' : false;
   });
 
@@ -12,10 +12,10 @@ export function ThemeProvider({ children }) {
     const root = document.documentElement;
     if (isDark) {
       root.classList.add('dark');
-      localStorage.setItem('chococraft-theme', 'dark');
+      localStorage.setItem('chocolafy-theme', 'dark');
     } else {
       root.classList.remove('dark');
-      localStorage.setItem('chococraft-theme', 'light');
+      localStorage.setItem('chocolafy-theme', 'light');
     }
   }, [isDark]);
 

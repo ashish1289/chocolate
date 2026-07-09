@@ -21,7 +21,7 @@ const VALUES = [
   { icon: '🌿', title: 'Natural First',   desc: 'Every ingredient is 100% natural — no artificial flavors, colors, or preservatives.' },
   { icon: '🤲', title: 'Handcrafted',     desc: 'Each piece is lovingly made by hand by expert chocolatiers with decades of experience.' },
   { icon: '🏆', title: 'Uncompromising',  desc: 'We refuse to cut corners. Premium ingredients, precise technique, every single time.' },
-  { icon: '❤️', title: 'Made with Love',  desc: 'ChocoCraft was born from passion. That passion flows into every chocolate we create.' },
+  { icon: '❤️', title: 'Made with Love',  desc: 'Chocolafy was born from passion. That passion flows into every chocolate we create.' },
 ];
 
 function AnimatedCounter({ target, suffix }) {
@@ -63,7 +63,7 @@ export default function About() {
       <PageHero
         title="Our Story"
         subtitle="How a passion for handcrafted perfection became India's most loved luxury chocolate brand."
-        tag="About ChocoCraft"
+        tag="About Chocolafy"
         breadcrumb="About"
         image={HERO_IMAGE}
       />
@@ -74,7 +74,7 @@ export default function About() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div variants={fadeLeft} initial="hidden" whileInView="visible" viewport={{ once: true }} className="relative">
               <div className="rounded-3xl overflow-hidden" style={{ boxShadow: '0 30px 80px rgba(59,31,22,0.2)' }}>
-                <img src={ABOUT_IMAGE} alt="ChocoCraft artisan" className="w-full object-cover" style={{ height: '520px' }} />
+                <img src={ABOUT_IMAGE} alt="Chocolafy artisan" className="w-full object-cover" style={{ height: '520px' }} />
                 <div className="absolute inset-0 rounded-3xl" style={{ background: 'linear-gradient(135deg, rgba(44,24,16,0.25) 0%, transparent 60%)' }} />
               </div>
               <motion.div
@@ -107,7 +107,7 @@ export default function About() {
               </h2>
               <div className="space-y-4 mb-8" style={{ color: 'var(--text-muted)', fontFamily: 'Poppins, sans-serif' }}>
                 <p className="text-base leading-relaxed">
-                  ChocoCraft was founded on a beautifully simple belief — that luxury chocolate
+                  Chocolafy was founded on a beautifully simple belief — that luxury chocolate
                   should celebrate nature's finest gifts. We started in a small artisan kitchen in
                   Mumbai, experimenting with premium dry fruits and single-origin Belgian couverture.
                 </p>
@@ -254,7 +254,7 @@ export default function About() {
               </h2>
               <p className="text-base leading-relaxed mb-8" style={{ color: 'var(--text-muted)', fontFamily: 'Poppins, sans-serif' }}>
                 We back every purchase with a 100% satisfaction guarantee. If you're not absolutely
-                delighted with your ChocoCraft experience, we'll make it right — no questions asked.
+                delighted with your Chocolafy experience, we'll make it right — no questions asked.
                 That's our promise to you.
               </p>
               <div className="space-y-4 mb-8">
@@ -278,7 +278,7 @@ export default function About() {
 
             <motion.div variants={fadeLeft} initial="hidden" whileInView="visible" viewport={{ once: true }} className="relative">
               <div className="rounded-3xl overflow-hidden" style={{ boxShadow: '0 30px 80px rgba(59,31,22,0.2)' }}>
-                <img src={TEAM_IMAGE} alt="ChocoCraft hazelnut chocolates" className="w-full object-cover" style={{ height: '480px' }} />
+                <img src={TEAM_IMAGE} alt="Chocolafy hazelnut chocolates" className="w-full object-cover" style={{ height: '480px' }} />
               </div>
             </motion.div>
           </div>

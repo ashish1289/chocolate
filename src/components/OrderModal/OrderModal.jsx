@@ -283,7 +283,7 @@ export default function OrderModal({ isOpen, onClose, selectedProduct }) {
                     </p>
                     <div className="flex gap-3 justify-center">
                       <a
-                        href="https://wa.me/919876543210?text=Hi+ChocoCraft!+I+want+to+place+an+order."
+                        href="https://wa.me/919876543210?text=Hi+Chocolafy!+I+want+to+place+an+order."
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn-gold text-sm py-2.5 px-5"

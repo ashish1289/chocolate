@@ -88,7 +88,7 @@ export default function FAQ() {
     <PageWrapper>
       <PageHero
         title="Frequently Asked Questions"
-        subtitle="Everything you need to know about ChocoCraft — from ingredients to delivery to custom gifting."
+        subtitle="Everything you need to know about Chocolafy — from ingredients to delivery to custom gifting."
         tag="Got Questions?"
         breadcrumb="FAQ"
         image={HERO_IMAGE}
@@ -157,7 +157,7 @@ export default function FAQ() {
             <div className="flex flex-wrap gap-4 justify-center">
               <Link to="/contact" className="btn-gold">Contact Us</Link>
               <a
-                href="https://wa.me/919876543210?text=Hi+ChocoCraft!+I+have+a+question."
+                href="https://wa.me/919876543210?text=Hi+Chocolafy!+I+have+a+question."
                 target="_blank" rel="noopener noreferrer"
                 className="btn-outline"
                 style={{ color: 'var(--text-primary)' }}
