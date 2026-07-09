@@ -1,0 +1,553 @@
+@import "tailwindcss";
+
+/* ============================================
+   CHOCOCRAFT — GLOBAL DESIGN SYSTEM
+   ============================================ */
+
+@theme {
+  /* Brand Colors */
+  --color-primary: #3B1F16;
+  --color-secondary: #5A3825;
+  --color-gold: #C9A227;
+  --color-gold-light: #E8C547;
+  --color-cream: #FFF8F0;
+  --color-chocolate: #2C1810;
+  --color-background: #FDF9F5;
+  --color-text: #222222;
+  --color-accent: #D97706;
+
+  /* Fonts */
+  --font-playfair: 'Playfair Display', serif;
+  --font-poppins: 'Poppins', sans-serif;
+
+  /* Shadows */
+  --shadow-gold: 0 0 30px rgba(201, 162, 39, 0.3);
+  --shadow-luxury: 0 20px 60px rgba(59, 31, 22, 0.15);
+  --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.08);
+
+  /* Border Radius */
+  --radius-luxury: 20px;
+}
+
+/* ============================================
+   ROOT & DARK MODE VARIABLES
+   ============================================ */
+:root {
+  --bg-primary: #FDF9F5;
+  --bg-secondary: #FFF8F0;
+  --bg-card: rgba(255, 248, 240, 0.8);
+  --text-primary: #222222;
+  --text-secondary: #5A3825;
+  --text-muted: #8B7355;
+  --border-color: rgba(201, 162, 39, 0.2);
+  --glass-bg: rgba(255, 248, 240, 0.7);
+  --glass-border: rgba(201, 162, 39, 0.25);
+  --navbar-bg: rgba(253, 249, 245, 0.95);
+}
+
+.dark {
+  --bg-primary: #0F0906;
+  --bg-secondary: #1A0F09;
+  --bg-card: rgba(26, 15, 9, 0.85);
+  --text-primary: #FFF8F0;
+  --text-secondary: #E8C547;
+  --text-muted: #C9A980;
+  --border-color: rgba(201, 162, 39, 0.3);
+  --glass-bg: rgba(26, 15, 9, 0.75);
+  --glass-border: rgba(201, 162, 39, 0.3);
+  --navbar-bg: rgba(15, 9, 6, 0.95);
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: none;
+}
+
+/* ============================================
+   CUSTOM SCROLLBAR
+   ============================================ */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #C9A227, #D97706);
+  border-radius: 3px;
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  background: linear-gradient(135deg, var(--text-primary) 0%, #C9A227 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: var(--text-muted);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.gold-text {
+  background: linear-gradient(135deg, #C9A227, #E8C547, #D97706);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================
+   GLASSMORPHISM
+   ============================================ */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(59, 31, 22, 0.08);
+}
+
+.glass-dark {
+  background: rgba(15, 9, 6, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(201, 162, 39, 0.25);
+  border-radius: 20px;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 36px;
+  background: linear-gradient(135deg, #C9A227 0%, #E8C547 50%, #D97706 100%);
+  color: #1a0f09;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(201, 162, 39, 0.4);
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(201, 162, 39, 0.6);
+}
+
+.btn-gold::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn-gold:active::after {
+  width: 300px;
+  height: 300px;
+  opacity: 0;
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 35px;
+  background: transparent;
+  color: var(--text-primary);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  border-radius: 50px;
+  border: 2px solid rgba(201, 162, 39, 0.6);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  border-color: #C9A227;
+  background: rgba(201, 162, 39, 0.1);
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   GRADIENT BACKGROUNDS
+   ============================================ */
+.gradient-gold {
+  background: linear-gradient(135deg, #C9A227 0%, #E8C547 50%, #D97706 100%);
+}
+
+.gradient-dark {
+  background: linear-gradient(135deg, #2C1810 0%, #3B1F16 50%, #5A3825 100%);
+}
+
+.gradient-luxury {
+  background: linear-gradient(135deg, #3B1F16 0%, #5A3825 40%, #C9A227 100%);
+}
+
+/* ============================================
+   SECTION PADDING
+   ============================================ */
+.section-padding {
+  padding: 100px 0;
+}
+
+.container-luxury {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ============================================
+   SCROLL PROGRESS BAR
+   ============================================ */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #C9A227, #E8C547, #D97706);
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
+/* ============================================
+   CUSTOM CURSOR
+   ============================================ */
+.cursor-dot {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: #C9A227;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease;
+}
+
+.cursor-ring {
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  border: 2px solid rgba(201, 162, 39, 0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease, width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+}
+
+.cursor-ring.hovering {
+  width: 60px;
+  height: 60px;
+  background: rgba(201, 162, 39, 0.1);
+}
+
+/* ============================================
+   FLOATING ANIMATION
+   ============================================ */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes floatReverse {
+  0%, 100% { transform: translateY(-10px) rotate(3deg); }
+  50% { transform: translateY(10px) rotate(-3deg); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 20px rgba(201, 162, 39, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(201, 162, 39, 0.7); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delay {
+  animation: float 8s ease-in-out infinite 2s;
+}
+
+.animate-float-reverse {
+  animation: floatReverse 7s ease-in-out infinite;
+}
+
+.animate-pulse-gold {
+  animation: pulse-gold 2s ease-in-out infinite;
+}
+
+/* ============================================
+   BADGE STYLES
+   ============================================ */
+.badge-bestseller {
+  display: inline-block;
+  padding: 3px 12px;
+  background: linear-gradient(135deg, #C9A227, #E8C547);
+  color: #1a0f09;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 20px;
+}
+
+.badge-new {
+  display: inline-block;
+  padding: 3px 12px;
+  background: linear-gradient(135deg, #3B1F16, #5A3825);
+  color: #E8C547;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 20px;
+  border: 1px solid rgba(201, 162, 39, 0.4);
+}
+
+/* ============================================
+   PRODUCT CARD GLOW
+   ============================================ */
+.product-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.product-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent, rgba(201, 162, 39, 0.08));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: inherit;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.product-card:hover::before {
+  opacity: 1;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(201, 162, 39, 0.25), 0 0 0 1px rgba(201, 162, 39, 0.2);
+}
+
+/* ============================================
+   STAR RATING
+   ============================================ */
+.stars {
+  color: #C9A227;
+  letter-spacing: 2px;
+}
+
+/* ============================================
+   ACCORDION
+   ============================================ */
+.accordion-content {
+  overflow: hidden;
+}
+
+/* ============================================
+   SECTION DIVIDERS
+   ============================================ */
+.wave-divider {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+/* ============================================
+   MASONRY GALLERY
+   ============================================ */
+.masonry-grid {
+  columns: 4 250px;
+  column-gap: 16px;
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 16px;
+}
+
+/* ============================================
+   LOADING ANIMATION
+   ============================================ */
+@keyframes loadingBar {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+.loading-bar {
+  animation: loadingBar 2s ease-in-out;
+}
+
+/* ============================================
+   COUNTER
+   ============================================ */
+.counter-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #C9A227, #E8C547);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 70px 0;
+  }
+
+  .masonry-grid {
+    columns: 2 150px;
+  }
+
+  body {
+    cursor: auto;
+  }
+
+  .cursor-dot,
+  .cursor-ring {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .masonry-grid {
+    columns: 2 120px;
+  }
+}
+
+/* ============================================
+   HOVER NAV UNDERLINE
+   ============================================ */
+.nav-link {
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #C9A227, #E8C547);
+  border-radius: 1px;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* ============================================
+   GLOW BORDER CARD
+   ============================================ */
+.glow-border {
+  position: relative;
+}
+
+.glow-border::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, #C9A227, transparent, #C9A227);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glow-border:hover::after {
+  opacity: 1;
+}
+
+/* ============================================
+   TIMELINE
+   ============================================ */
+.timeline-line {
+  position: relative;
+}
+
+.timeline-line::before {
+  content: '';
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: calc(100% - 24px);
+  background: linear-gradient(180deg, #C9A227, transparent);
+}
