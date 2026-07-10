@@ -12,17 +12,21 @@ import ProductCard from '../components/Products/ProductCard';
 const HERO_IMAGE = 'https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=1920&q=90';
 
 const FLOATING_CARDS = [
-  { emoji: '🍫', title: 'Almond Delight',  subtitle: 'Handcrafted', price: '₹499', delay: 0.4, float: 'animate-float' },
-  { emoji: '🎁', title: 'Gift Box',         subtitle: 'Premium',     price: '₹1,499', delay: 0.7, float: 'animate-float-delay' },
-  { emoji: '⭐', title: '5-Star Rated',     subtitle: '5,000+ happy orders', price: null, delay: 1.0, float: 'animate-float-reverse' },
+  { emoji: '🍫', title: 'Almond Delight', subtitle: 'Handcrafted', price: '₹499', delay: 0.4, float: 'animate-float' },
+  { emoji: '🎁', title: 'Gift Box', subtitle: 'Premium', price: '₹1,499', delay: 0.7, float: 'animate-float-delay' },
+  { emoji: '⭐', title: '5-Star Rated', subtitle: '5,000+ happy orders', price: null, delay: 1.0, float: 'animate-float-reverse' },
 ];
 
 /* Gradient CTA section between content blocks */
 function CtaBand({ text, linkTo, linkLabel }) {
   return (
     <div
-      className="relative py-16 overflow-hidden"
-      style={{ background: 'linear-gradient(135deg, #2C1810 0%, #3B1F16 50%, #5A3825 100%)' }}
+      className="relative overflow-hidden"
+      style={{ 
+        background: 'linear-gradient(135deg, #2C1810 0%, #3B1F16 50%, #5A3825 100%)',
+        paddingTop: '90px',
+        paddingBottom: '90px'
+      }}
     >
       <div
         className="absolute inset-0"
@@ -30,16 +34,13 @@ function CtaBand({ text, linkTo, linkLabel }) {
       />
       <div className="container-luxury relative z-10 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
         <p
-          className="text-xl md:text-2xl font-bold text-white"
-          style={{ fontFamily: 'Playfair Display, serif', maxWidth: 480 }}
+          className="text-2xl md:text-4xl font-bold text-white leading-relaxed z-20 relative"
+          style={{ fontFamily: 'Playfair Display, serif', maxWidth: 600 }}
         >
           {text}
         </p>
-        <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}>
-          <Link to={linkTo} className="btn-gold whitespace-nowrap">
-            <ArrowRight size={18} /> {linkLabel}
-          </Link>
-        </motion.div>
+        
+        {/* Contact Us button was removed per user request */}
       </div>
     </div>
   );
@@ -48,7 +49,7 @@ function CtaBand({ text, linkTo, linkLabel }) {
 export default function Home({ onOrderClick }) {
   const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] });
-  const bgY    = useTransform(scrollYProgress, [0, 1], ['0%', '28%']);
+  const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '28%']);
   const opacity = useTransform(scrollYProgress, [0, 0.65], [1, 0]);
 
   const featured = PRODUCTS.filter(p => p.badge === 'bestseller').slice(0, 4);
@@ -93,7 +94,7 @@ export default function Home({ onOrderClick }) {
               width: 200 + i * 80, height: 200 + i * 80,
               background: `radial-gradient(circle, rgba(201,162,39,${0.04 + i * 0.02}) 0%, transparent 70%)`,
               left: `${[10, 62, 22, 76][i]}%`,
-              top:  `${[20, 58, 68, 14][i]}%`,
+              top: `${[20, 58, 68, 14][i]}%`,
             }}
             animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.6, 0.3] }}
             transition={{ duration: 4 + i, repeat: Infinity, delay: i * 0.8 }}
@@ -107,11 +108,10 @@ export default function Home({ onOrderClick }) {
             initial={{ opacity: 0, scale: 0.7 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: card.delay + 1, type: 'spring', stiffness: 140 }}
-            className={`absolute hidden md:block z-20 ${
-              card.title === 'Almond Delight' ? 'left-12 top-1/3'
+            className={`absolute hidden md:block z-20 ${card.title === 'Almond Delight' ? 'left-12 top-1/3'
               : card.title === 'Gift Box' ? 'right-12 top-1/4'
-              : 'right-20 bottom-1/3'
-            }`}
+                : 'right-20 bottom-1/3'
+              }`}
           >
             <div className={card.float}>
               <div
@@ -148,7 +148,7 @@ export default function Home({ onOrderClick }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-5 py-2 rounded-full mb-7"
+            className="inline-flex items-center gap-2 px-5 py-2 rounded-full mb-7 mt-24 md:mt-28"
             style={{ background: 'rgba(201,162,39,0.13)', border: '1px solid rgba(201,162,39,0.38)' }}
           >
             <Sparkles size={13} color="#C9A227" />
@@ -185,7 +185,7 @@ export default function Home({ onOrderClick }) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9, duration: 0.7 }}
-            className="text-base md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
+            className="text-base md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed"
             style={{ color: 'rgba(255,248,240,0.72)', fontFamily: 'Poppins, sans-serif', fontWeight: 300 }}
           >
             Handcrafted dry fruit chocolates made with premium almonds, dates, pistachios,
@@ -221,7 +221,7 @@ export default function Home({ onOrderClick }) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.3, duration: 0.7 }}
-            className="mt-16 inline-flex flex-wrap gap-8 justify-center"
+            className="mt-20 inline-flex flex-wrap gap-10 justify-center"
           >
             {[
               { value: '5,000+', label: 'Happy Customers' },
@@ -262,15 +262,15 @@ export default function Home({ onOrderClick }) {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-16 flex flex-col items-center"
           >
-            <p className="text-sm font-bold tracking-[0.2em] uppercase mb-4" style={{ color: '#C9A227', fontFamily: 'Poppins, sans-serif' }}>
+            <p className="text-sm font-bold tracking-[0.2em] uppercase mb-3" style={{ color: '#C9A227', fontFamily: 'Poppins, sans-serif' }}>
               Bestsellers
             </p>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ fontFamily: 'Playfair Display, serif', color: 'var(--text-primary)' }}>
+            <h2 className="text-4xl md:text-5xl font-bold mb-5" style={{ fontFamily: 'Playfair Display, serif', color: 'var(--text-primary)' }}>
               Our Finest Creations
             </h2>
-            <p className="text-base max-w-xl mx-auto leading-relaxed" style={{ color: 'var(--text-muted)', fontFamily: 'Poppins, sans-serif' }}>
+            <p className="text-base max-w-2xl mx-auto text-center leading-relaxed" style={{ color: 'var(--text-muted)', fontFamily: 'Poppins, sans-serif' }}>
               Discover the chocolates that our customers keep coming back for — crafted with
               uncompromising quality and natural ingredients.
             </p>
@@ -285,7 +285,7 @@ export default function Home({ onOrderClick }) {
             </div>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-14">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
             {featured.map((p, i) => (
               <motion.div
                 key={p.id}
@@ -304,6 +304,7 @@ export default function Home({ onOrderClick }) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             className="text-center"
+            style={{ marginTop: '80px' }}
           >
             <Link to="/products" className="btn-outline" style={{ color: 'var(--text-primary)' }}>
               <ArrowRight size={18} /> View Full Collection
@@ -418,6 +419,12 @@ export default function Home({ onOrderClick }) {
       <Testimonials />
 
       {/* ════════════════ CONTACT CTA BAND ════════════════ */}
+      <div className="relative w-full overflow-hidden pointer-events-none z-10" style={{ lineHeight: 0, marginBottom: '-1px' }}>
+        <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full h-[25px] md:h-[40px]">
+          <path d="M0,60 C320,0 420,60 720,20 C1020,-10 1120,60 1440,10 L1440,60 L0,60 Z" fill="#2C1810" />
+          <path d="M0,60 C320,0 420,60 720,20 C1020,-10 1120,60 1440,10" fill="none" stroke="rgba(201,162,39,0.3)" strokeWidth="2" />
+        </svg>
+      </div>
       <CtaBand
         text="Have a custom order or question? We'd love to hear from you."
         linkTo="/contact"

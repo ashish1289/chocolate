@@ -99,35 +99,34 @@ export default function Hero({ onOrderClick }) {
           key={card.title}
           initial={{ opacity: 0, scale: 0.7 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: card.delay + 1, duration: 0.6, type: 'spring' }}
-          className={`absolute ${card.x} ${card.y} hidden md:block z-20`}
+          transition={{ duration: 0.6, type: 'spring' }}
+          className={`absolute hidden md:block z-20 w-max max-w-none ${
+            card.title === 'Almond Delight' ? 'left-12 top-1/3'
+            : card.title === 'Gift Box' ? 'right-12 top-1/4'
+            : 'right-20 bottom-1/3'
+          }`}
         >
-          <div className={card.floatClass}>
+          <div className={card.float}>
             <div
-              className="rounded-2xl flex items-center gap-3"
+              className="px-4 py-3 rounded-2xl flex items-center gap-4 w-max pr-6"
               style={{
-                padding: '12px 16px',
-                background: 'rgba(15,9,6,0.7)',
+                background: 'rgba(15,9,6,0.72)',
                 backdropFilter: 'blur(20px)',
                 border: '1px solid rgba(201,162,39,0.3)',
-                boxShadow: '0 8px 30px rgba(0,0,0,0.4)',
+                boxShadow: '0 8px 32px rgba(0,0,0,0.4)',
               }}
             >
               <div
-                className="w-10 h-10 rounded-xl flex items-center justify-center text-xl"
-                style={{ background: 'rgba(201,162,39,0.2)' }}
+                className="w-10 h-10 rounded-xl flex items-center justify-center text-xl shrink-0"
+                style={{ background: 'rgba(201,162,39,0.18)' }}
               >
                 {card.emoji}
               </div>
-              <div>
+              <div className="whitespace-nowrap pr-2">
                 <p className="text-sm font-semibold text-white leading-none">{card.title}</p>
-                <p className="text-xs mt-0.5" style={{ color: 'rgba(201,162,39,0.8)' }}>
-                  {card.subtitle}
-                </p>
+                <p className="text-xs mt-0.5" style={{ color: 'rgba(201,162,39,0.8)' }}>{card.subtitle}</p>
                 {card.price && (
-                  <p className="text-sm font-bold mt-0.5" style={{ color: '#C9A227' }}>
-                    {card.price}
-                  </p>
+                  <p className="text-sm font-bold mt-0.5" style={{ color: '#C9A227' }}>{card.price}</p>
                 )}
               </div>
             </div>

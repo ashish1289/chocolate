@@ -84,12 +84,12 @@ export default function ProductCard({ product, onOrderClick }) {
 
         {/* Weight badge */}
         <div
-          className="absolute bottom-3 left-3 px-2.5 py-1 rounded-full text-xs font-medium z-10"
+          className="absolute bottom-3 left-3 px-3.5 py-1 rounded-full text-xs font-medium z-10 whitespace-nowrap"
           style={{
-            background: 'rgba(15,9,6,0.7)',
-            backdropFilter: 'blur(10px)',
+            background: 'rgba(15,9,6,0.85)',
             color: 'rgba(255,248,240,0.9)',
             border: '1px solid rgba(201,162,39,0.3)',
+            overflow: 'hidden'
           }}
         >
           {product.weight}
