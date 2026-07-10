@@ -71,8 +71,9 @@ export default function About() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.5, type: 'spring' }}
-              className="absolute -bottom-6 -right-6 p-5 rounded-2xl animate-float"
+              className="absolute -bottom-6 -right-6 rounded-2xl animate-float"
               style={{
+                padding: '24px',
                 background: 'linear-gradient(135deg, #C9A227, #E8C547)',
                 boxShadow: '0 15px 40px rgba(201,162,39,0.5)',
               }}
@@ -177,7 +178,8 @@ export default function About() {
           {COUNTERS.map(counter => (
             <div
               key={counter.label}
-              className="glass-card text-center p-6"
+              className="glass-card text-center"
+              style={{ padding: '24px' }}
             >
               <AnimatedCounter target={counter.value} suffix={counter.suffix} />
               <p

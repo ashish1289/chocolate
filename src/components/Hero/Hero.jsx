@@ -104,8 +104,9 @@ export default function Hero({ onOrderClick }) {
         >
           <div className={card.floatClass}>
             <div
-              className="px-4 py-3 rounded-2xl flex items-center gap-3"
+              className="rounded-2xl flex items-center gap-3"
               style={{
+                padding: '12px 16px',
                 background: 'rgba(15,9,6,0.7)',
                 backdropFilter: 'blur(20px)',
                 border: '1px solid rgba(201,162,39,0.3)',

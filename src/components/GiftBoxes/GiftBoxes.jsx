@@ -114,23 +114,23 @@ export default function GiftBoxes({ onOrderClick }) {
               </div>
 
               {/* Content */}
-              <div className="p-6">
+              <div className="flex flex-col flex-1 relative z-10 w-full" style={{ padding: '28px' }}>
                 <h3
-                  className="text-xl font-bold mb-2"
+                  className="text-xl font-bold mb-3"
                   style={{ fontFamily: 'Playfair Display, serif', color: 'var(--text-primary)' }}
                 >
                   {box.title}
                 </h3>
                 <p
-                  className="text-sm leading-relaxed mb-5"
+                  className="text-sm leading-relaxed mb-6 flex-1"
                   style={{ color: 'var(--text-muted)', fontFamily: 'Poppins, sans-serif' }}
                 >
                   {box.description}
                 </p>
 
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between mt-auto">
                   <div>
-                    <p className="text-xs" style={{ color: 'var(--text-muted)' }}>Starting from</p>
+                    <p className="text-xs mb-1" style={{ color: 'var(--text-muted)' }}>Starting from</p>
                     <p
                       className="text-xl font-bold"
                       style={{
@@ -155,7 +155,8 @@ export default function GiftBoxes({ onOrderClick }) {
                         description: box.description,
                       })
                     }
-                    className="btn-gold text-sm py-2.5 px-5"
+                    className="btn-gold text-sm"
+                    style={{ padding: '10px 20px' }}
                   >
                     <ShoppingBag size={15} />
                     Order

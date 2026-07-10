@@ -71,8 +71,8 @@ export default function WhyChooseUs() {
                 key={item.title}
                 variants={itemVariants}
                 whileHover={{ y: -6, scale: 1.02 }}
-                className="glass-card glow-border p-6 text-center group"
-                style={{ transition: 'all 0.3s ease' }}
+                className="glass-card glow-border text-center group"
+                style={{ padding: '24px', transition: 'all 0.3s ease' }}
               >
                 {/* Icon circle */}
                 <motion.div

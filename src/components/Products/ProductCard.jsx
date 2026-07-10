@@ -97,17 +97,18 @@ export default function ProductCard({ product, onOrderClick }) {
       </div>
 
       {/* Content */}
-      <div className="p-5 flex flex-col flex-1 relative z-10">
+      <div className="flex flex-col flex-1 relative z-10 w-full" style={{ padding: '24px' }}>
         {/* Tags */}
-        <div className="flex flex-wrap gap-1.5 mb-3">
+        <div className="flex flex-wrap mb-3" style={{ gap: '6px' }}>
           {product.tags.slice(0, 2).map(tag => (
             <span
               key={tag}
-              className="text-[10px] font-medium px-2 py-0.5 rounded-full"
+              className="text-[10px] font-medium rounded-full"
               style={{
                 background: 'rgba(201,162,39,0.1)',
                 color: '#C9A227',
                 border: '1px solid rgba(201,162,39,0.2)',
+                padding: '4px 8px'
               }}
             >
               {tag}
@@ -116,7 +117,7 @@ export default function ProductCard({ product, onOrderClick }) {
         </div>
 
         <h3
-          className="text-lg font-bold mb-1.5"
+          className="text-lg font-bold mb-2"
           style={{ fontFamily: 'Playfair Display, serif', color: 'var(--text-primary)' }}
         >
           {product.name}
@@ -130,8 +131,8 @@ export default function ProductCard({ product, onOrderClick }) {
         </p>
 
         {/* Rating */}
-        <div className="flex items-center gap-2 mb-4">
-          <div className="flex">
+        <div className="flex items-center mb-5" style={{ gap: '8px' }}>
+          <div className="flex" style={{ gap: '2px' }}>
             {[...Array(5)].map((_, i) => (
               <Star
                 key={i}
@@ -151,7 +152,7 @@ export default function ProductCard({ product, onOrderClick }) {
         </div>
 
         {/* Price & Buy */}
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between mt-auto">
           <div>
             <p
               className="text-2xl font-bold"
@@ -161,6 +162,7 @@ export default function ProductCard({ product, onOrderClick }) {
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
+                marginBottom: '4px'
               }}
             >
               {product.price}
@@ -174,7 +176,8 @@ export default function ProductCard({ product, onOrderClick }) {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => onOrderClick(product)}
-            className="btn-gold text-sm py-2.5 px-5"
+            className="btn-gold text-sm"
+            style={{ padding: '10px 20px' }}
           >
             <ShoppingBag size={15} />
             Buy Now

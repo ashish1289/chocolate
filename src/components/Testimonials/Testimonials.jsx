@@ -80,7 +80,8 @@ export default function Testimonials() {
               animate="center"
               exit="exit"
               transition={{ duration: 0.5, ease: 'easeInOut' }}
-              className="glass-card p-8 md:p-12 text-center relative w-full"
+              className="glass-card text-center relative w-full"
+              style={{ padding: '40px' }}
             >
               {/* Quote icon */}
               <div
