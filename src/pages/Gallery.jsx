@@ -197,4 +197,7 @@ export default function Gallery() {
  / /  
  T r i g g e r  
  2  
+ / /  
+ T r i g g e r  
+ 3  
  
