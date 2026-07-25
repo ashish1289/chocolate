@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ZoomIn, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import PageWrapper from '../components/PageWrapper/PageWrapper';
@@ -37,7 +37,7 @@ export default function Gallery() {
     <PageWrapper>
       <PageHero
         title="Gallery"
-        subtitle="A visual feast of our luxury chocolate creations — indulge your eyes before your taste buds."
+        subtitle="A visual feast of our luxury chocolate creations â€” indulge your eyes before your taste buds."
         tag="Visual Journey"
         breadcrumb="Gallery"
         image={HERO_IMAGE}
@@ -103,7 +103,7 @@ export default function Gallery() {
         </div>
       </section>
 
-      {/* ── Lightbox ── */}
+      {/* â”€â”€ Lightbox â”€â”€ */}
       <AnimatePresence>
         {selected && (
           <motion.div
@@ -189,15 +189,3 @@ export default function Gallery() {
     </PageWrapper>
   );
 }
-/ /  
- T r i g g e r i n g  
- C l o u d f l a r e  
- d e p l o y m e n t  
- t e s t  
- / /  
- T r i g g e r  
- 2  
- / /  
- T r i g g e r  
- 3  
- 
