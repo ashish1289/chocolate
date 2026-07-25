@@ -94,15 +94,14 @@ function CtaBandImage({ text, linkTo, linkLabel }) {
       viewport={{ once: true, margin: "-50px" }}
       className="relative overflow-hidden"
       style={{ 
-        background: 'linear-gradient(135deg, #1A0F09 0%, #3B1F16 50%, #1A0F09 100%)',
+        background: 'linear-gradient(180deg, #1A0F09 0%, #1A0F09 15%, #3B1F16 50%, #1A0F09 85%, #1A0F09 100%)',
         paddingTop: '80px',
         paddingBottom: '80px',
-        borderTop: '1px solid rgba(201,162,39,0.15)',
         borderBottom: '1px solid rgba(201,162,39,0.15)'
       }}
     >
       {/* Background Glow */}
-      <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(circle at 70% 50%, rgba(201,162,39,0.1) 0%, transparent 60%)' }} />
+      <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(circle at 70% 50%, rgba(201,162,39,0.08) 0%, transparent 40%)' }} />
 
       <div className="container-luxury relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
         {/* Text Side */}
