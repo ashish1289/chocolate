@@ -30,7 +30,7 @@ function AnimatedCounter({ target, suffix }) {
   }, [inView, target]);
 
   return (
-    <span ref={ref} className="counter-value">
+    <span ref={ref} className="text-3xl md:text-4xl font-bold block mb-1" style={{ color: '#C9A227', fontFamily: 'Playfair Display, serif' }}>
       {count.toLocaleString()}{suffix}
     </span>
   );

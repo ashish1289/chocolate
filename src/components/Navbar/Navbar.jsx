@@ -4,23 +4,23 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ShoppingBag } from 'lucide-react';
 import { useTheme } from '../../context/ThemeContext';
 import ThemeToggle from '../ThemeToggle/ThemeToggle';
-
+import logoImg from '../../assets/logo.png';
 const NAV_LINKS = [
-  { label: 'Home',       to: '/' },
-  { label: 'Products',   to: '/products' },
-  { label: 'About',      to: '/about' },
+  { label: 'Home', to: '/' },
+  { label: 'Products', to: '/products' },
+  { label: 'About', to: '/about' },
   { label: 'Gift Boxes', to: '/gift-boxes' },
-  { label: 'Gallery',    to: '/gallery' },
-  { label: 'FAQ',        to: '/faq' },
-  { label: 'Contact',    to: '/contact' },
+  { label: 'Gallery', to: '/gallery' },
+  { label: 'FAQ', to: '/faq' },
+  { label: 'Contact', to: '/contact' },
 ];
 
 export default function Navbar() {
-  const [scrolled,  setScrolled]  = useState(false);
-  const [menuOpen,  setMenuOpen]  = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const { isDark } = useTheme();
-  const location   = useLocation();
-  const isHome     = location.pathname === '/';
+  const location = useLocation();
+  const isHome = location.pathname === '/';
 
   /* Close mobile menu on route change */
   useEffect(() => setMenuOpen(false), [location.pathname]);
@@ -45,6 +45,12 @@ export default function Navbar() {
     return solidBg ? 'var(--text-primary)' : 'rgba(255,248,240,0.9)';
   };
 
+  const isNavbarWhite = solidBg && !isDark;
+  const goldenFilter = 'brightness(0) saturate(100%) invert(70%) sepia(68%) saturate(456%) hue-rotate(353deg) brightness(87%) contrast(85%) drop-shadow(0 2px 10px rgba(201,162,39,0.3))';
+  
+  const desktopLogoFilter = !isNavbarWhite ? goldenFilter : 'none';
+  const mobileLogoFilter = isDark ? goldenFilter : 'none';
+
   return (
     <>
       <motion.nav
@@ -65,33 +71,16 @@ export default function Navbar() {
 
           {/* ── Logo ── */}
           <Link to="/" className="flex items-center gap-3 group shrink-0">
-            <motion.div
-              whileHover={{ scale: 1.05, rotate: -5 }}
-              className="w-10 h-10 rounded-xl flex items-center justify-center text-xl shadow-lg"
-              style={{ background: 'linear-gradient(135deg, #C9A227, #E8C547)' }}
-            >
-              🍫
-            </motion.div>
-            <div>
-              <span
-                className="text-2xl font-bold leading-none block"
-                style={{
-                  fontFamily: 'Playfair Display, serif',
-                  background: 'linear-gradient(135deg, #C9A227, #E8C547)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                }}
-              >
-                Chocolafy
-              </span>
-              <span
-                className="text-[9px] tracking-[0.2em] uppercase block"
-                style={{ color: solidBg ? 'var(--text-muted)' : 'rgba(201,162,39,0.7)' }}
-              >
-                Luxury Chocolates
-              </span>
-            </div>
+            <img
+              src={logoImg}
+              alt="Chocolafy Logo"
+              className={`h-10 md:h-12 w-auto object-contain drop-shadow-md origin-left transition-transform duration-500 ease-out ${
+                !isNavbarWhite
+                  ? 'scale-[2.2] md:scale-[2.6] hover:scale-[2.3] md:hover:scale-[2.7]'
+                  : 'scale-[1.6] md:scale-[1.9] hover:scale-[1.7] md:hover:scale-[2]'
+              }`}
+              style={{ filter: desktopLogoFilter }}
+            />
           </Link>
 
           {/* ── Desktop links ── */}
@@ -102,8 +91,7 @@ export default function Navbar() {
                   to={link.to}
                   end={link.to === '/'}
                   className={({ isActive }) =>
-                    `nav-link px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
-                      isActive ? 'active' : ''
+                    `nav-link px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${isActive ? 'active' : ''
                     }`
                   }
                   style={({ isActive }) => ({
@@ -180,18 +168,7 @@ export default function Navbar() {
             >
               {/* Header */}
               <div className="flex justify-between items-center mb-10">
-                <span
-                  className="text-xl font-bold"
-                  style={{
-                    fontFamily: 'Playfair Display, serif',
-                    background: 'linear-gradient(135deg, #C9A227, #E8C547)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                  }}
-                >
-                  Chocolafy
-                </span>
+                <img src={logoImg} alt="Chocolafy Logo" className="h-8 w-auto object-contain drop-shadow-md scale-[1.5] origin-left transition-all duration-300" style={{ filter: mobileLogoFilter }} />
                 <button onClick={() => setMenuOpen(false)} style={{ color: '#C9A227' }}>
                   <X size={22} />
                 </button>
@@ -210,8 +187,7 @@ export default function Navbar() {
                       to={link.to}
                       end={link.to === '/'}
                       className={({ isActive }) =>
-                        `block text-left w-full px-4 py-3 rounded-xl text-base font-medium transition-all duration-200 ${
-                          isActive ? 'active' : ''
+                        `block text-left w-full px-4 py-3 rounded-xl text-base font-medium transition-all duration-200 ${isActive ? 'active' : ''
                         }`
                       }
                       style={({ isActive }) => ({

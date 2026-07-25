@@ -8,21 +8,21 @@ import PageHero from '../components/PageHero/PageHero';
 const HERO_IMAGE = 'https://images.unsplash.com/photo-1548907040-4baa42d10919?w=1600&q=85';
 
 const CONTACT_INFO = [
-  { icon: Phone,  title: 'Call Us',        value: '+91-98765-43210', sub: 'Mon–Sat, 9AM–8PM',  href: 'tel:+919876543210' },
-  { icon: Mail,   title: 'Email Us',       value: 'hello@chocolafy.in', sub: 'Reply within 24h', href: 'mailto:hello@chocolafy.in' },
-  { icon: MapPin, title: 'Visit Us',       value: 'Mumbai, Maharashtra', sub: 'India – 400001',  href: null },
-  { icon: Clock,  title: 'Business Hours', value: 'Mon–Sat: 9AM–8PM',    sub: 'Sun: 10AM–6PM',  href: null },
+  { icon: Phone, title: 'Call Us', value: '+91-89173-42626', sub: 'Mon–Sat, 9AM–8PM', href: 'tel:+919876543210' },
+  { icon: Mail, title: 'Email Us', value: 'hello@chocolafy.in', sub: 'Reply within 24h', href: 'mailto:hello@chocolafy.in' },
+  { icon: MapPin, title: 'Visit Us', value: 'Mumbai, Maharashtra', sub: 'India – 400001', href: null },
+  { icon: Clock, title: 'Business Hours', value: 'Mon–Sat: 9AM–8PM', sub: 'Sun: 10AM–6PM', href: null },
 ];
 
-const fadeLeft  = { hidden: { opacity: 0, x: -40 }, visible: { opacity: 1, x: 0, transition: { duration: 0.7 } } };
-const fadeRight = { hidden: { opacity: 0, x:  40 }, visible: { opacity: 1, x: 0, transition: { duration: 0.7 } } };
-const fadeUp    = { hidden: { opacity: 0, y:  28 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } };
+const fadeLeft = { hidden: { opacity: 0, x: -40 }, visible: { opacity: 1, x: 0, transition: { duration: 0.7 } } };
+const fadeRight = { hidden: { opacity: 0, x: 40 }, visible: { opacity: 1, x: 0, transition: { duration: 0.7 } } };
+const fadeUp = { hidden: { opacity: 0, y: 28 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } };
 
 const INITIAL_FORM = { name: '', email: '', phone: '', subject: '', message: '' };
 
 export default function Contact() {
-  const [form, setForm]       = useState(INITIAL_FORM);
-  const [sent, setSent]       = useState(false);
+  const [form, setForm] = useState(INITIAL_FORM);
+  const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const handleChange = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }));
@@ -117,10 +117,10 @@ export default function Contact() {
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div className="grid sm:grid-cols-2 gap-4">
                       {[
-                        { name: 'name',  label: 'Full Name',     type: 'text',  placeholder: 'Your full name',       required: true },
-                        { name: 'email', label: 'Email Address', type: 'email', placeholder: 'your@email.com',       required: true },
-                        { name: 'phone', label: 'Phone Number',  type: 'tel',   placeholder: '+91-98765-43210',      required: false },
-                        { name: 'subject',label: 'Subject',      type: 'text',  placeholder: 'Custom order / Query', required: true },
+                        { name: 'name', label: 'Full Name', type: 'text', placeholder: 'Your full name', required: true },
+                        { name: 'email', label: 'Email Address', type: 'email', placeholder: 'your@email.com', required: true },
+                        { name: 'phone', label: 'Phone Number', type: 'tel', placeholder: '+91-89173-42626', required: false },
+                        { name: 'subject', label: 'Subject', type: 'text', placeholder: 'Custom order / Query', required: true },
                       ].map(field => (
                         <div key={field.name} className={field.name === 'subject' ? 'sm:col-span-2' : ''}>
                           <label
@@ -202,8 +202,8 @@ export default function Contact() {
                 <div className="flex gap-3">
                   {[
                     { icon: FaInstagram, href: 'https://instagram.com/chocolafy', color: '#E4405F', label: 'Instagram' },
-                    { icon: FaWhatsapp,  href: 'https://wa.me/919876543210',       color: '#25D366', label: 'WhatsApp'  },
-                    { icon: FaFacebook,  href: 'https://facebook.com/chocolafy',  color: '#1877F2', label: 'Facebook'  },
+                    { icon: FaWhatsapp, href: 'https://wa.me/919876543210', color: '#25D366', label: 'WhatsApp' },
+                    { icon: FaFacebook, href: 'https://facebook.com/chocolafy', color: '#1877F2', label: 'Facebook' },
                   ].map(s => {
                     const Icon = s.icon;
                     return (

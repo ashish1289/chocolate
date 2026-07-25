@@ -3,34 +3,35 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Send, Mail } from 'lucide-react';
 import { FaInstagram, FaWhatsapp, FaFacebook, FaYoutube } from 'react-icons/fa';
+import logoImg from '../../assets/logo.png';
 
 const QUICK_LINKS = [
-  { label: 'Home',        to: '/' },
-  { label: 'Products',    to: '/products' },
-  { label: 'About Us',    to: '/about' },
-  { label: 'Gift Boxes',  to: '/gift-boxes' },
-  { label: 'Gallery',     to: '/gallery' },
-  { label: 'Contact',     to: '/contact' },
+  { label: 'Home', to: '/' },
+  { label: 'Products', to: '/products' },
+  { label: 'About Us', to: '/about' },
+  { label: 'Gift Boxes', to: '/gift-boxes' },
+  { label: 'Gallery', to: '/gallery' },
+  { label: 'Contact', to: '/contact' },
 ];
 
 const PRODUCT_LINKS = [
-  { label: 'Almond Chocolate',      to: '/products' },
-  { label: 'Pistachio Chocolate',   to: '/products' },
-  { label: 'Khajoor Chocolate',     to: '/products' },
-  { label: 'Hazelnut Chocolate',    to: '/products' },
-  { label: 'Gift Boxes',            to: '/gift-boxes' },
-  { label: 'Custom Orders',         to: '/contact' },
+  { label: 'Almond Chocolate', to: '/products' },
+  { label: 'Pistachio Chocolate', to: '/products' },
+  { label: 'Khajoor Chocolate', to: '/products' },
+  { label: 'Hazelnut Chocolate', to: '/products' },
+  { label: 'Gift Boxes', to: '/gift-boxes' },
+  { label: 'Custom Orders', to: '/contact' },
 ];
 
 const SOCIAL = [
-  { icon: FaInstagram, href: 'https://instagram.com/chocolafy',  label: 'Instagram', color: '#E4405F' },
-  { icon: FaWhatsapp,  href: 'https://wa.me/919876543210',        label: 'WhatsApp',  color: '#25D366' },
-  { icon: FaFacebook,  href: 'https://facebook.com/chocolafy',   label: 'Facebook',  color: '#1877F2' },
-  { icon: FaYoutube,   href: 'https://youtube.com/@chocolafy',   label: 'YouTube',   color: '#FF0000' },
+  { icon: FaInstagram, href: 'https://instagram.com/chocolafy', label: 'Instagram', color: '#E4405F' },
+  { icon: FaWhatsapp, href: 'https://wa.me/919876543210', label: 'WhatsApp', color: '#25D366' },
+  { icon: FaFacebook, href: 'https://facebook.com/chocolafy', label: 'Facebook', color: '#1877F2' },
+  { icon: FaYoutube, href: 'https://youtube.com/@chocolafy', label: 'YouTube', color: '#FF0000' },
 ];
 
 export default function Footer() {
-  const [email, setEmail]       = useState('');
+  const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
 
   const handleSubscribe = e => {
@@ -63,16 +64,12 @@ export default function Footer() {
           {/* ── Brand ── */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-2.5 mb-5 w-fit">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center text-xl"
-                style={{ background: 'linear-gradient(135deg, #C9A227, #E8C547)' }}>
-                🍫
-              </div>
-              <span
-                className="text-2xl font-bold"
-                style={{ fontFamily: 'Playfair Display, serif', background: 'linear-gradient(135deg, #C9A227, #E8C547)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}
-              >
-                Chocolafy
-              </span>
+              <img
+                src={logoImg}
+                alt="Chocolafy Logo"
+                className="h-10 md:h-12 w-auto object-contain drop-shadow-md scale-[1.5] origin-left"
+                style={{ filter: 'brightness(0) saturate(100%) invert(70%) sepia(68%) saturate(456%) hue-rotate(353deg) brightness(87%) contrast(85%) drop-shadow(0 2px 10px rgba(201,162,39,0.3))' }}
+              />
             </Link>
             <p
               className="text-sm leading-relaxed mb-4"
@@ -193,7 +190,7 @@ export default function Footer() {
               <p className="text-xs mb-2" style={{ color: 'rgba(201,169,128,0.5)', fontFamily: 'Poppins, sans-serif' }}>Need help?</p>
               <a href="tel:+919876543210" className="text-sm font-semibold transition-colors hover:text-[#C9A227]"
                 style={{ color: 'rgba(255,248,240,0.7)', fontFamily: 'Poppins, sans-serif' }}>
-                +91-98765-43210
+                +91-89173-42626
               </a>
             </div>
           </div>

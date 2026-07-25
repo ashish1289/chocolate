@@ -8,25 +8,25 @@ import { PROCESS_STEPS } from '../data/data';
 
 const HERO_IMAGE = 'https://images.unsplash.com/photo-1511381939415-e44015466834?w=1600&q=85';
 const ABOUT_IMAGE = 'https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=900&q=85';
-const TEAM_IMAGE  = 'https://images.unsplash.com/photo-1551024506-0bccd828d307?w=900&q=85';
+const TEAM_IMAGE = 'https://images.unsplash.com/photo-1551024506-0bccd828d307?w=900&q=85';
 
 const COUNTERS = [
-  { value: 100,  suffix: '+',    label: 'Premium Recipes'   },
-  { value: 5000, suffix: '+',    label: 'Happy Customers'   },
-  { value: 25,   suffix: '+',    label: 'Chocolate Varieties'},
-  { value: 4,    suffix: ' Yrs', label: 'Of Excellence'     },
+  { value: 100, suffix: '+', label: 'Premium Recipes' },
+  { value: 5000, suffix: '+', label: 'Happy Customers' },
+  { value: 25, suffix: '+', label: 'Chocolate Varieties' },
+  { value: 4, suffix: ' Yrs', label: 'Of Excellence' },
 ];
 
 const VALUES = [
-  { icon: '🌿', title: 'Natural First',   desc: 'Every ingredient is 100% natural — no artificial flavors, colors, or preservatives.' },
-  { icon: '🤲', title: 'Handcrafted',     desc: 'Each piece is lovingly made by hand by expert chocolatiers with decades of experience.' },
-  { icon: '🏆', title: 'Uncompromising',  desc: 'We refuse to cut corners. Premium ingredients, precise technique, every single time.' },
-  { icon: '❤️', title: 'Made with Love',  desc: 'Chocolafy was born from passion. That passion flows into every chocolate we create.' },
+  { icon: '🌿', title: 'Natural First', desc: 'Every ingredient is 100% natural — no artificial flavors, colors, or preservatives.' },
+  { icon: '🤲', title: 'Handcrafted', desc: 'Each piece is lovingly made by hand by expert chocolatiers with decades of experience.' },
+  { icon: '🏆', title: 'Uncompromising', desc: 'We refuse to cut corners. Premium ingredients, precise technique, every single time.' },
+  { icon: '❤️', title: 'Made with Love', desc: 'Chocolafy was born from passion. That passion flows into every chocolate we create.' },
 ];
 
 function AnimatedCounter({ target, suffix }) {
   const [count, setCount] = useState(0);
-  const ref    = useRef(null);
+  const ref = useRef(null);
   const inView = useInView(ref, { once: true });
 
   useEffect(() => {
@@ -43,19 +43,19 @@ function AnimatedCounter({ target, suffix }) {
   }, [inView, target]);
 
   return (
-    <span ref={ref} className="counter-value">
+    <span ref={ref} className="text-3xl md:text-4xl font-bold block mb-1" style={{ color: '#C9A227', fontFamily: 'Playfair Display, serif' }}>
       {count.toLocaleString()}{suffix}
     </span>
   );
 }
 
 const fadeUp = {
-  hidden:  { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0,  transition: { duration: 0.7, ease: 'easeOut' } },
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } },
 };
 
-const fadeLeft  = { hidden: { opacity: 0, x: -50 }, visible: { opacity: 1, x: 0, transition: { duration: 0.8 } } };
-const fadeRight = { hidden: { opacity: 0, x:  50 }, visible: { opacity: 1, x: 0, transition: { duration: 0.8 } } };
+const fadeLeft = { hidden: { opacity: 0, x: -50 }, visible: { opacity: 1, x: 0, transition: { duration: 0.8 } } };
+const fadeRight = { hidden: { opacity: 0, x: 50 }, visible: { opacity: 1, x: 0, transition: { duration: 0.8 } } };
 
 export default function About() {
   return (
@@ -99,7 +99,7 @@ export default function About() {
 
             <motion.div variants={fadeRight} initial="hidden" whileInView="visible" viewport={{ once: true }}>
               <p className="section-subtitle mb-4">Our Beginning</p>
-              <h2 className="text-4xl md:text-5xl font-bold mb-7 leading-tight" style={{ fontFamily: 'Playfair Display, serif', color: 'var(--text-primary)' }}>
+              <h2 className="text-4xl md:text-5xl font-bold mb-7 leading-tight" style={{ fontFamily: 'poppins, serif', color: 'var(--text-primary)' }}>
                 Crafted with Passion,{' '}
                 <span className="italic block" style={{ background: 'linear-gradient(135deg, #C9A227, #E8C547)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                   Born from Nature

@@ -4,7 +4,7 @@ import { Phone } from 'lucide-react';
 
 // ✏️  CHANGE THESE PLACEHOLDERS:
 const WHATSAPP_NUMBER = '919876543210'; // e.g. 919876543210
-const PHONE_NUMBER = '+91-98765-43210';
+const PHONE_NUMBER = '+91-89173-42626';
 const INSTAGRAM_URL = 'https://instagram.com/chocolafy';
 
 export default function FloatingButtons() {

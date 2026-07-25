@@ -11,38 +11,161 @@ import ProductCard from '../components/Products/ProductCard';
 
 const HERO_IMAGE = 'https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=1920&q=90';
 
-const FLOATING_CARDS = [
-  { emoji: '🍫', title: 'Almond Delight', subtitle: 'Handcrafted', price: '₹499', delay: 0.4, float: 'animate-float' },
-  { emoji: '🎁', title: 'Gift Box', subtitle: 'Premium', price: '₹1,499', delay: 0.7, float: 'animate-float-delay' },
-  { emoji: '⭐', title: '5-Star Rated', subtitle: '5,000+ happy orders', price: null, delay: 1.0, float: 'animate-float-reverse' },
+const FLOATING_CHOCOLATES = [
+  { emoji: '🍫', size: 'text-6xl', top: '25%', left: '10%', delay: 0, duration: 6, rotate: 15 },
+  { emoji: '🌰', size: 'text-5xl', top: '65%', left: '15%', delay: 2, duration: 7, rotate: -20 },
+  { emoji: '🍫', size: 'text-7xl', top: '30%', left: '80%', delay: 1, duration: 8, rotate: 25 },
+  { emoji: '🥜', size: 'text-4xl', top: '75%', left: '75%', delay: 3, duration: 5, rotate: -15 },
+  { emoji: '🍫', size: 'text-5xl', top: '15%', left: '50%', delay: 1.5, duration: 6.5, rotate: 45 },
 ];
 
-/* Gradient CTA section between content blocks */
-function CtaBand({ text, linkTo, linkLabel }) {
+const SVG_PATTERN = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='600' viewBox='0 0 1200 600'%3E%3Cstyle%3E .l %7B fill: none; stroke: rgba(201,162,39,0.15); stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; %7D .t %7B fill: rgba(201,162,39,0.15); font-family: sans-serif; font-weight: 900; font-size: 48px; letter-spacing: 6px; %7D %3C/style%3E %3C!-- Cocoa Bean 1 --%3E %3Cg transform='translate(100, 150) rotate(-20)'%3E %3Cpath d='M0,50 C50,0 120,0 150,50 C120,100 50,100 0,50 Z' class='l' /%3E %3Cpath d='M30,50 C60,30 90,30 120,50' class='l' /%3E %3Cpath d='M30,50 C60,70 90,70 120,50' class='l' /%3E %3C/g%3E %3C!-- Chocolate Bar --%3E %3Cg transform='translate(400, 80) rotate(15)'%3E %3Crect x='0' y='0' width='160' height='240' rx='15' class='l' /%3E %3Crect x='20' y='20' width='50' height='50' rx='8' class='l' /%3E %3Crect x='90' y='20' width='50' height='50' rx='8' class='l' /%3E %3Crect x='20' y='90' width='50' height='50' rx='8' class='l' /%3E %3Crect x='90' y='90' width='50' height='50' rx='8' class='l' /%3E %3Crect x='20' y='160' width='50' height='50' rx='8' class='l' /%3E %3Crect x='90' y='160' width='50' height='50' rx='8' class='l' /%3E %3C/g%3E %3C!-- Banner --%3E %3Cg transform='translate(750, 180) rotate(-10)'%3E %3Cpath d='M0,30 L250,30 L220,70 L250,110 L0,110 Z' class='l' /%3E %3Cpath d='M0,30 C-30,50 -30,90 0,110' class='l' /%3E %3Ctext x='40' y='85' class='t'%3EESTD%3C/text%3E %3C/g%3E %3C!-- Pitcher Pouring --%3E %3Cg transform='translate(200, 380) rotate(-5)'%3E %3Cpath d='M50,0 L120,0 L150,150 L20,150 Z' class='l' /%3E %3Cpath d='M20,40 C-30,40 -30,110 30,110' class='l' /%3E %3Cpath d='M120,0 C170,-20 200,60 200,150' class='l' /%3E %3Cpath d='M200,150 C200,180 250,180 250,150' class='l' /%3E %3C/g%3E %3C!-- Gift Box --%3E %3Cg transform='translate(600, 400) rotate(20)'%3E %3Crect x='0' y='30' width='140' height='100' class='l' /%3E %3Crect x='-10' y='0' width='160' height='30' class='l' /%3E %3Cpath d='M70,30 L70,130' class='l' /%3E %3Cpath d='M70,0 C40,-30 10,0 70,0' class='l' /%3E %3Cpath d='M70,0 C100,-30 130,0 70,0' class='l' /%3E %3C/g%3E %3C!-- Cocoa Bean 2 --%3E %3Cg transform='translate(950, 420) rotate(45)'%3E %3Cpath d='M0,50 C50,0 120,0 150,50 C120,100 50,100 0,50 Z' class='l' /%3E %3Cpath d='M30,50 C60,30 90,30 120,50' class='l' /%3E %3Cpath d='M30,50 C60,70 90,70 120,50' class='l' /%3E %3C/g%3E %3C!-- Sparkles / Stars --%3E %3Cpath d='M50,300 L60,330 L90,340 L60,350 L50,380 L40,350 L10,340 L40,330 Z' class='l' /%3E %3Cpath d='M850,50 L855,65 L870,70 L855,75 L850,90 L845,75 L830,70 L845,65 Z' class='l' /%3E %3C/svg%3E`;
+
+/* Gradient CTA section between content blocks (Scrolling Background) */
+function CtaBandScroll({ text, linkTo, linkLabel }) {
   return (
     <div
-      className="relative overflow-hidden"
+      className="relative overflow-hidden flex items-center justify-center"
       style={{ 
-        background: 'linear-gradient(135deg, #2C1810 0%, #3B1F16 50%, #5A3825 100%)',
-        paddingTop: '90px',
-        paddingBottom: '90px'
+        background: 'linear-gradient(135deg, #1A0F09 0%, #2C1810 50%, #1A0F09 100%)',
+        paddingTop: '100px',
+        paddingBottom: '100px',
+        borderTop: '1px solid rgba(201,162,39,0.2)',
+        borderBottom: '1px solid rgba(201,162,39,0.2)'
       }}
     >
-      <div
-        className="absolute inset-0"
-        style={{ background: 'radial-gradient(ellipse at 30% 50%, rgba(201,162,39,0.08) 0%, transparent 60%)' }}
-      />
-      <div className="container-luxury relative z-10 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-        <p
-          className="text-2xl md:text-4xl font-bold text-white leading-relaxed z-20 relative"
-          style={{ fontFamily: 'Playfair Display, serif', maxWidth: 600 }}
+      {/* Hardware-accelerated flawless sliding background */}
+      <motion.div
+        animate={{ x: [0, -1200] }}
+        transition={{ repeat: Infinity, ease: 'linear', duration: 25 }}
+        className="absolute inset-0 z-0 pointer-events-none"
+        style={{ width: 'calc(100vw + 1200px)' }}
+      >
+        <div 
+          className="w-full h-full" 
+          style={{ 
+            background: `url("${SVG_PATTERN}") repeat-x`,
+            backgroundSize: '1200px 600px',
+          }} 
+        />
+      </motion.div>
+
+      {/* Shadow overlay to blend edges */}
+      <div className="absolute inset-0 z-0 pointer-events-none" style={{ boxShadow: 'inset 0 0 100px rgba(15,9,6,0.9)' }} />
+
+      {/* Particle dust overlay for extra luxury feel */}
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.04]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'%3E%3Cfilter id=\'noise\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.8\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'400\' height=\'400\' filter=\'url(%23noise)\'/%3E%3C/svg%3E")' }} />
+
+      <div className="container-luxury relative z-10 text-center flex justify-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="glass-card px-8 py-8 md:px-14 md:py-10 inline-block"
+          style={{ background: 'rgba(26,15,9,0.75)', border: '1px solid rgba(201,162,39,0.25)' }}
         >
-          {text}
-        </p>
-        
-        {/* Contact Us button was removed per user request */}
+          <Sparkles size={24} color="#C9A227" className="mx-auto mb-4 opacity-90" />
+          <p
+            className="text-2xl md:text-4xl font-bold leading-snug"
+            style={{ 
+              fontFamily: 'Playfair Display, serif', 
+              maxWidth: 750,
+              background: 'linear-gradient(135deg, #FFF8F0 0%, #C9A227 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+            }}
+          >
+            {text}
+          </p>
+        </motion.div>
       </div>
     </div>
+  );
+}
+
+/* Gradient CTA section with text on left and circular image on right */
+function CtaBandImage({ text, linkTo, linkLabel }) {
+  return (
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-50px" }}
+      className="relative overflow-hidden"
+      style={{ 
+        background: 'linear-gradient(135deg, #1A0F09 0%, #3B1F16 50%, #1A0F09 100%)',
+        paddingTop: '80px',
+        paddingBottom: '80px',
+        borderTop: '1px solid rgba(201,162,39,0.15)',
+        borderBottom: '1px solid rgba(201,162,39,0.15)'
+      }}
+    >
+      {/* Background Glow */}
+      <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(circle at 70% 50%, rgba(201,162,39,0.1) 0%, transparent 60%)' }} />
+
+      <div className="container-luxury relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
+        {/* Text Side */}
+        <motion.div
+          variants={{
+            hidden: { opacity: 0, x: -50 },
+            visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: 'easeOut' } }
+          }}
+          className="flex-1 text-center md:text-left"
+        >
+          <Sparkles size={24} color="#C9A227" className="mx-auto md:mx-0 mb-6 opacity-80" />
+          <p
+            className="text-3xl md:text-5xl font-bold leading-tight"
+            style={{ 
+              fontFamily: 'Playfair Display, serif', 
+              maxWidth: 600,
+              background: 'linear-gradient(135deg, #FFF8F0 0%, #C9A227 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+            }}
+          >
+            {text}
+          </p>
+        </motion.div>
+
+        {/* Animated Image Side */}
+        <motion.div
+          variants={{
+            hidden: { opacity: 0, scale: 0.8, rotate: 10 },
+            visible: { opacity: 1, scale: 1, rotate: 0, transition: { duration: 1, ease: 'easeOut' } }
+          }}
+          className="relative w-full md:w-5/12 lg:w-1/3 flex justify-center"
+        >
+          <motion.div
+            animate={{ y: [-15, 15, -15], rotate: [0, 4, 0] }}
+            transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
+            className="relative rounded-full overflow-hidden"
+            style={{ 
+              width: '280px',
+              height: '280px',
+              boxShadow: '0 25px 50px rgba(0,0,0,0.6), inset 0 0 0 2px rgba(201,162,39,0.3)',
+            }}
+          >
+            <img 
+              src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=600&q=85" 
+              alt="Luxury Chocolate" 
+              className="w-full h-full object-cover scale-110"
+            />
+            {/* Soft inner shadow overlay */}
+            <div className="absolute inset-0" style={{ boxShadow: 'inset 0 0 40px rgba(15,9,6,0.8)' }} />
+          </motion.div>
+
+          {/* Floating decorative ring */}
+          <motion.div 
+            animate={{ rotate: -360 }} 
+            transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
+            className="absolute w-[320px] h-[320px] rounded-full border border-dashed border-[#C9A227]/30 pointer-events-none"
+            style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
+          />
+        </motion.div>
+      </div>
+    </motion.div>
   );
 }
 
@@ -101,43 +224,29 @@ export default function Home({ onOrderClick }) {
           />
         ))}
 
-        {/* Floating cards */}
-        {FLOATING_CARDS.map(card => (
+        {/* Floating chocolates */}
+        {FLOATING_CHOCOLATES.map((choc, i) => (
           <motion.div
-            key={card.title}
-            initial={{ opacity: 0, scale: 0.7 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: card.delay + 1, type: 'spring', stiffness: 140 }}
-            className={`absolute hidden md:block z-20 ${card.title === 'Almond Delight' ? 'left-12 top-1/3'
-              : card.title === 'Gift Box' ? 'right-12 top-1/4'
-                : 'right-20 bottom-1/3'
-              }`}
+            key={i}
+            className={`absolute z-10 ${choc.size} pointer-events-none drop-shadow-2xl`}
+            style={{ top: choc.top, left: choc.left, filter: 'drop-shadow(0 10px 15px rgba(0,0,0,0.5))' }}
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{
+              opacity: [0.6, 0.9, 0.6],
+              y: [0, -30, 0],
+              x: [0, 20, 0],
+              rotate: [choc.rotate, choc.rotate + 15, choc.rotate],
+              scale: [0, 1, 1] // Handle entry and stay
+            }}
+            transition={{
+              opacity: { duration: choc.duration, repeat: Infinity, ease: 'easeInOut', delay: choc.delay },
+              y: { duration: choc.duration, repeat: Infinity, ease: 'easeInOut', delay: choc.delay },
+              x: { duration: choc.duration * 1.2, repeat: Infinity, ease: 'easeInOut', delay: choc.delay },
+              rotate: { duration: choc.duration * 1.5, repeat: Infinity, ease: 'easeInOut', delay: choc.delay },
+              scale: { duration: 1, delay: choc.delay, times: [0, 1, 1] }
+            }}
           >
-            <div className={card.float}>
-              <div
-                className="px-4 py-3 rounded-2xl flex items-center gap-3"
-                style={{
-                  background: 'rgba(15,9,6,0.72)',
-                  backdropFilter: 'blur(20px)',
-                  border: '1px solid rgba(201,162,39,0.3)',
-                  boxShadow: '0 8px 32px rgba(0,0,0,0.4)',
-                }}
-              >
-                <div
-                  className="w-10 h-10 rounded-xl flex items-center justify-center text-xl"
-                  style={{ background: 'rgba(201,162,39,0.18)' }}
-                >
-                  {card.emoji}
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-white leading-none">{card.title}</p>
-                  <p className="text-xs mt-0.5" style={{ color: 'rgba(201,162,39,0.8)' }}>{card.subtitle}</p>
-                  {card.price && (
-                    <p className="text-sm font-bold mt-0.5" style={{ color: '#C9A227' }}>{card.price}</p>
-                  )}
-                </div>
-              </div>
-            </div>
+            {choc.emoji}
           </motion.div>
         ))}
 
@@ -230,7 +339,7 @@ export default function Home({ onOrderClick }) {
               { value: '100%', label: 'Natural Ingredients' },
             ].map(s => (
               <div key={s.label} className="text-center">
-                <p className="text-2xl font-bold" style={{ fontFamily: 'Playfair Display, serif', background: 'linear-gradient(135deg, #C9A227, #E8C547)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+                <p className="text-2xl font-bold" style={{ fontFamily: 'Poppins, sans-serif', background: 'linear-gradient(135deg, #C9A227, #E8C547)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                   {s.value}
                 </p>
                 <p className="text-xs mt-0.5" style={{ color: 'rgba(255,248,240,0.55)', fontFamily: 'Poppins, sans-serif' }}>
@@ -317,7 +426,7 @@ export default function Home({ onOrderClick }) {
       <WhyChooseUs />
 
       {/* ════════════════ GIFT CTA BAND ════════════════ */}
-      <CtaBand
+      <CtaBandScroll
         text="Make every occasion unforgettable with our luxury gift collections."
         linkTo="/gift-boxes"
         linkLabel="Explore Gift Boxes"
@@ -400,7 +509,7 @@ export default function Home({ onOrderClick }) {
                     key={s.label}
                     className="glass-card p-4 text-center"
                   >
-                    <p className="text-2xl font-bold" style={{ fontFamily: 'Playfair Display, serif', background: 'linear-gradient(135deg, #C9A227, #E8C547)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+                    <p className="text-2xl font-bold" style={{ fontFamily: 'Poppins, sans-serif', background: 'linear-gradient(135deg, #C9A227, #E8C547)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                       {s.value}
                     </p>
                     <p className="text-xs mt-1" style={{ color: 'var(--text-muted)', fontFamily: 'Poppins, sans-serif' }}>{s.label}</p>
@@ -421,11 +530,11 @@ export default function Home({ onOrderClick }) {
       {/* ════════════════ CONTACT CTA BAND ════════════════ */}
       <div className="relative w-full overflow-hidden pointer-events-none z-10" style={{ lineHeight: 0, marginBottom: '-1px' }}>
         <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full h-[25px] md:h-[40px]">
-          <path d="M0,60 C320,0 420,60 720,20 C1020,-10 1120,60 1440,10 L1440,60 L0,60 Z" fill="#2C1810" />
+          <path d="M0,60 C320,0 420,60 720,20 C1020,-10 1120,60 1440,10 L1440,60 L0,60 Z" fill="#1A0F09" />
           <path d="M0,60 C320,0 420,60 720,20 C1020,-10 1120,60 1440,10" fill="none" stroke="rgba(201,162,39,0.3)" strokeWidth="2" />
         </svg>
       </div>
-      <CtaBand
+      <CtaBandImage
         text="Have a custom order or question? We'd love to hear from you."
         linkTo="/contact"
         linkLabel="Contact Us"

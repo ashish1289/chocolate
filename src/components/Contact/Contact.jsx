@@ -5,7 +5,7 @@ const CONTACT_INFO = [
   {
     icon: Phone,
     title: 'Call Us',
-    value: '+91-98765-43210',
+    value: '+91-89173-42626',
     sub: 'Mon–Sat, 9AM–8PM',
     href: 'tel:+919876543210',
   },

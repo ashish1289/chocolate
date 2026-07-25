@@ -322,7 +322,7 @@ export default function OrderModal({ isOpen, onClose, selectedProduct }) {
                         id="mobile"
                         name="mobile"
                         type="tel"
-                        placeholder="+91-98765-43210"
+                        placeholder="+91-89173-42626"
                         value={form.mobile}
                         onChange={handleChange}
                         required

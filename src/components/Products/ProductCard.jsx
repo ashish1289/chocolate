@@ -157,7 +157,7 @@ export default function ProductCard({ product, onOrderClick }) {
             <p
               className="text-2xl font-bold"
               style={{
-                fontFamily: 'Playfair Display, serif',
+                fontFamily: 'Poppins, sans-serif',
                 background: 'linear-gradient(135deg, #C9A227, #E8C547)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',

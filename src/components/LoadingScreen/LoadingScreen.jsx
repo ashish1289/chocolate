@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import logoImg from '../../assets/logo.png';
 
 export default function LoadingScreen({ onComplete }) {
   const [progress, setProgress] = useState(0);
@@ -56,28 +57,14 @@ export default function LoadingScreen({ onComplete }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <motion.div
-              className="text-5xl"
-              animate={{ rotate: [0, 10, -10, 0] }}
+          <div className="flex items-center justify-center mb-8">
+            <motion.img
+              src={logoImg}
+              alt="Chocolafy Logo"
+              className="h-24 md:h-32 w-auto object-contain drop-shadow-xl"
+              animate={{ scale: [1, 1.05, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
-            >
-              🍫
-            </motion.div>
-            <div>
-              <h1
-                className="text-5xl font-bold"
-                style={{
-                  fontFamily: 'Playfair Display, serif',
-                  background: 'linear-gradient(135deg, #C9A227, #E8C547, #D97706)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                }}
-              >
-                Chocolafy
-              </h1>
-            </div>
+            />
           </div>
           <motion.p
             className="text-sm tracking-widest uppercase mb-12"
